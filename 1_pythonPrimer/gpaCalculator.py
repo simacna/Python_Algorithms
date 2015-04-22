@@ -7,7 +7,7 @@ points = {'A+':4.0, 'A':4.0, 'A-':3.67, 'B+': 3.33, 'B':3.0, 'B-':2.67,
 
 num_courses = 0
 total_points = 0
-done= False
+done = False
 
 while not done:
 	grade = input()
