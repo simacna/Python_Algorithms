@@ -21,3 +21,17 @@ while not done:
 
 if num_courses > 0:
 	print('Your GPA is {0:.3'.format(total_points / num_courses))
+
+#1.5 Functions
+
+#first function example
+#the first line, beginning with the keyword def, serves as the function's signature. 
+
+def count(data, target):
+	n = 0
+
+	for item in data:
+		if item == target:
+			n += 1
+	return n
+
