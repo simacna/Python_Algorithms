@@ -110,7 +110,58 @@ def sum(values):
 # if values is not an iterable type, the attempt to use the for loop raises TypeError reporting obj is not iterable
 
 
-1.7.2 Cathing an Exception
+# 1.7.2 Cathing an Exception
+# in order to not constantly check for raising an exception, it is best to use some methodologies that follow:
+# 1. "look before you leap" - better to ensure that an error cannot rise rather than try catching it
+
+if y!= 0:
+	ratio = x/y
+else:
+	# ...do something else
+
+
+# 2. "it is easier to ask for forgiveness than it is to get permission". implement this using try-except:
+
+try:
+	ratio = x/y
+except ZeroDivisionError:
+	# ...do something else
+
+# the try block is the primary code to be executed. best used when thinking that the except case is unlikely
+# exception handling is particularly useful when working with user input, or when reading from or writing files,
+# because these are less predicble. 
+# Exception are objects that can be examined when caught.
+
+try:
+	fp = open('sample.txt')
+except IOError as e:
+	print('Unable to open the file:', e)
+
+
+# A try-statement may handle more than one type of exeption. For example consider the following:
+
+age = int(input('Enter your age in years: '))
+
+# this could fail for a variety of reasons. If we want to handle two or more types of errors in the same way,
+# we can use a single except-statement as follow:
+
+age = -1
+
+while age <= 0:
+	try:
+		age = int(input('Enter your age in years'))
+		if age <= 0:
+			print('your age must be positive')
+	except(ValueError, EOFError):
+		print("invalid response")
+
+# we use the tuple (ValueError, EOFError) to designate the types of errors that we wish to catch
+
+# if we preferred to have the while loop continue without printing the 'invalid response' message, we could write:
+
+	except(ValueError, EOFError):
+		pass
+
 
 
 
