@@ -35,3 +35,40 @@ def count(data, target):
 			n += 1
 	return n
 
+#default parameter values. Python provides means for functions to support more than one possible calling signature called polymorphic functions
+#say we declare:
+
+def foo(a, b=15, c=16):
+
+
+#say you give above foo(1,2,3), it will take those values; if you give it one (foo(1)), it will default to foo(1,15,16)
+#however it is illegal to decalre a function as such: foo(a, b=15, c); if a parameter is set, all future parameters need to be defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
