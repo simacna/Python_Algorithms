@@ -45,16 +45,42 @@ def foo(a, b=15, c=16):
 #however it is illegal to decalre a function as such: foo(a, b=15, c); if a parameter is set, all future parameters need to be defined
 
 
+#1.6 Simple input and output
+
+#sample program of using input
+
+age = int(input('Enter your age in years: '))
+max_heart_rate = 206.9 - (0.67 * age)
+target = 0.65 * max_heart_rate
+print('Your target fat-burning heart rate is', target)
 
 
 
 
+#1.6.2 Files
+# built in function open to open a file, with a second optional parameter determining the access mode. fp = open('sample.txt')
+# r = reading, w = writing, a = appending
+# fp.close(). files also support the for-loop syntax, with iteration being line by line (e.g. for line in fp:)
 
+# Writing to a file
+# when a file is writeable (fp = open('results.txt', 'w')), the syntax fp.write('Hello world. \n') writes a single
+# line to the file with the given string. 
 
+# 1.7 exception handling
 
+# exception might result from a logical error or an unanticipated situation. exceptions (or errors) are objects that are
+# raise (or thrown) by the code that encounters an unespected circumance. The Python interpreter can also raise
+# an exception should it encounter an unexpected condition, like running out of memory.
 
+# A raise error may be caught by a surrounding context that "handles" the exception in an appropriate fashion
 
-
+def sqrt(x):
+    if not isinstance(x, (int,float)):
+        raise TypeError('x must be numeric')
+    elif x < 0:
+        raise ValueError('x cannot be negative!')
+    
+    return math.sqrt(x)
 
 
 
