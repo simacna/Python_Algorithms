@@ -83,7 +83,31 @@ def sqrt(x):
     return math.sqrt(x)
 
 
+# the built-in function, isinstance(obj, cls) reteurns True if object (obj), is an instance of class (cls), or any subclass
+# of that type. 
+# How much error checking to perform is a matter of debate as it can slow the program. Take below for example:
 
+def sum(values):
+	if not isinstance(values, collections.Iterable):
+		raise TypeError("parameter must be an iterable type")
+	total = 0
+	for v in values:
+		if not isinstance(v, (int, float)):
+			raise TypeError('elements must be numeric')
+		total += v
+	return total
+
+# A far more direct and clear implementation of this function:
+
+def sum(values):
+	total = 0
+	for v in values:
+		total += v
+	return total
+
+
+# Even without the explicit checks, appropriate exceptions are raised naturally by the code. In particular,
+# if values is not an iterable type, the attempt to use the for loop raises TypeError reporting obj is not iterable
 
 
 
