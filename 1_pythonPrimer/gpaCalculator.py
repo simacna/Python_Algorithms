@@ -110,7 +110,7 @@ def sum(values):
 # if values is not an iterable type, the attempt to use the for loop raises TypeError reporting obj is not iterable
 
 
-
+1.7.2 Cathing an Exception
 
 
 
