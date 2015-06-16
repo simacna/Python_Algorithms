@@ -164,6 +164,57 @@ while age <= 0:
 
 
 
+# In order to provide different responses to different types of errors, we may use two or more except-clause
+# as part of a try-structure. 
+
+age = -1
+while age <= 0:
+	try:
+		age = int(input("enter your age in yeras"))
+		if age <= 0:
+			print('Your age must be positive')
+	except ValueError:
+		print("That is an invalid age specification")
+	except EOFError:
+		print("There was an unexpected error reading input")
+		raise
+
+
+# 1.8 Iterators and generators
+
+# Lazy evaluation: range(1000000) does not return a list of numbers; it returns a range object that is iterable
+# # this object generates the million values one at a time, and only as needed. 
+
+# We see lazy evaluation used in many of Python's libraries. E.g. the dictionary class supports methods keys(), values()
+# and items(), which respective produce a 'view' of all keys, values, or (key, value) pairs within a dictionary. 
+
+
+The most convenient technique for creating python iterators is through generators. generators look very similar to
+functions but instead of returning a value, a yield statement is executed to indicate each element of the series.
+
+As an ex. consider the goal of determing all factors of a positive integer. e.g. 100 has factors 1,2,4,5,10..100.
+
+A traditional function might produce an return a list:
+
+def factors(n):
+	results = []
+
+	for k in range(1, n+1):
+		if n % k ==0:
+			results.append(k)
+		return results
+
+In contrast, an implementation of a generator for computing those factors could be implemented as follows:
+
+def factors(n):
+	for k in range(1, n+1):
+		if n%k==0:
+			yield k
+
+yield keyword designates a generator. It is illegal to combine yield and return statements in the same implementation
+
+
+
 
 
 
