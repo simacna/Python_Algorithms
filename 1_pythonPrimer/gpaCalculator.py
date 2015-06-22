@@ -211,7 +211,61 @@ def factors(n):
 		if n%k==0:
 			yield k
 
-yield keyword designates a generator. It is illegal to combine yield and return statements in the same implementation
+# yield keyword designates a generator. It is illegal to combine yield and return statements in the same implementation
+
+
+# 1.9 Additional python conveniences
+
+# 1.9.1 Conditional expression
+
+# Python supports a conditional expression syntax that can replace a simple control structure. 
+# General syntax is: expr1 if condition else expr2
+
+# Ex:
+
+if n>= 0:
+	param = n
+else:
+	param = -n
+result = foo(param)
+
+# could be written as:
+
+param = n if n >= 0 else -n
+result = foo(param)
+
+# OR:
+
+result = foo(n if n >= 0 else -n)
+
+# 1.9.2 Comprehension syntax
+
+# In general, list Comprehension syntax:
+
+# [expression for value in iterable if condition]. this is equivalent to:
+
+result = []
+for value in iterable:
+	if condition:
+		result.append(expression)
+
+# ex:
+
+squares = []
+for k in range(1, n+1):
+	squares.append(k*k)
+
+# with list comprehension, this is equivalent to:
+squares = [k*k for k in range(1, n+1)]
+
+
+
+
+
+
+
+
+
 
 
 
