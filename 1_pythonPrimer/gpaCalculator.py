@@ -213,7 +213,7 @@ def factors(n):
 
 # yield keyword designates a generator. It is illegal to combine yield and return statements in the same implementation
 
-
+#6/22/15
 # 1.9 Additional python conveniences
 
 # 1.9.1 Conditional expression
@@ -258,14 +258,26 @@ for k in range(1, n+1):
 # with list comprehension, this is equivalent to:
 squares = [k*k for k in range(1, n+1)]
 
+# automatic packing = for example if a function returns multiple values from a function, a tuple is create:
+
+return x, y #will return a tupe (x,y)
+
+# the combination of automatic packing and unpacking forms a technique known as simulatenous assignment, where
+# we explicitly assign a series of values to a series of identifies using:
+
+x, y, z = 6, 2, 5
 
 
+# The right hand side of the assignment is evaluated before any assignment is made. This is significant, as it provides
+# a convenient means for swapping the values with two variables:
 
+j,k = k, j #the variables swap 
 
+where as an explicit way of declaring this is using a temporary variable:
 
-
-
-
+temp = j
+j = k
+k = temp
 
 
 
