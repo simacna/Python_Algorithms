@@ -36,6 +36,41 @@ def sum(n):
 	return sum([pow(x,2) for x in range(n) if n > 0])
 
 
+# R1.5 - Give a single command that computes the sum from Excercise 1.4
+
+# R1.6/R1.7 Write a short fufunction that takes a positive integer n and returns the sum of the squares of all the odd
+# positive integers smaller than n
+
+def oddSquare(n):
+	return sum([x*2 for x in range(n) if (x%2 !=0)])
+
+# R1.8 - Python allows negative integers to be used as indices into a sequence, such a a string. If string s has length n
+# and expression s[k] is used for index -n <= k < 0, what is the equivalent index j>= 0 such that s[j] references the same 
+# element?
+
+strings = "testing" #string s (strings) with length n (7) 
+#s[k] =>strings[k] index -n(-7) <= k < 0. j >= 0
+
+def kay(n):
+    for idx in n:
+        print idx
+        
+        
+        
+kay(strings)
+
+# R1.9 - What parameters should be sent to the range constructor, to produce a range with values 50, 60, 70, 80
+return range(50, 90, 10)
+
+#1.10 - What parameters should be sent to the range constructor, to produce range with values
+
+
+
+
+
+
+
+
 
 
 
