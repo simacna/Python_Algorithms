@@ -62,7 +62,8 @@ kay(strings)
 # R1.9 - What parameters should be sent to the range constructor, to produce a range with values 50, 60, 70, 80
 return range(50, 90, 10)
 
-#1.10 - What parameters should be sent to the range constructor, to produce range with values
+#1.10 - What parameters should be sent to the range constructor, to produce range with values to produce 8, 6, 4, 2...-8
+
 
 
 
