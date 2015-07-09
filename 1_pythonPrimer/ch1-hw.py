@@ -74,7 +74,10 @@ return [pow(2,x) for x in range(0,9)]
 # that returns a random choice from the given range. Using only the randrange function, implement your own version of the
 # choice function
 
-
+def randz(data):
+    length = len(data)
+    indixList = random.randrange(0,length)
+    return data[indixList] #I'm proud of this one!
 
 
 
