@@ -62,8 +62,17 @@ kay(strings)
 # R1.9 - What parameters should be sent to the range constructor, to produce a range with values 50, 60, 70, 80
 return range(50, 90, 10)
 
-#1.10 - What parameters should be sent to the range constructor, to produce range with values to produce 8, 6, 4, 2...-8
+#R1.10 - What parameters should be sent to the range constructor, to produce range with values to produce 8, 6, 4, 2...-8
+return range(8, -10, -2)
 
+#R1.11 - Demonstrate how to use Python's list comprehension syntax to produce the list [1,2,4,8,16,32,64,256]
+
+return [pow(2,x) for x in range(0,9)]
+
+# R1.12 - Python's random module includes a function choice(data) that returns a random element from a non-empty sequence. 
+# The random module includes a more basic function randrange, with parametization similar to the built in range function,
+# that returns a random choice from the given range. Using only the randrange function, implement your own version of the
+# choice function
 
 
 
