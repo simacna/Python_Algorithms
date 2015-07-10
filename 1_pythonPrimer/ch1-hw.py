@@ -82,6 +82,28 @@ def randz(data):
 
 
 
+#CREATIVITY 
+
+# C1.13 - Write a pseudo-code description of a function that reverses a list of n integrs, so that the numbers are listed 
+# in the opposite order than they were before, and compare this method to an equivalent Python function for doing the same
+# thing
+
+def reverse(ints):
+
+	for idx in ints:
+		interim = []
+		current = ints[idx] #initially i was going to try a for loops but with splicig you can do the below:
+
+	return ints[::-1]
+
+	# OR list comprehension below:
+
+	return [array[n] for n in range(len(array)-1, -1, -1)]
+
+
+
+
+
 
 
 
