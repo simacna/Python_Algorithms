@@ -100,6 +100,19 @@ def reverse(ints):
 
 	return [array[n] for n in range(len(array)-1, -1, -1)]
 
+# Another option using for loops
+
+def reverse(my_list):
+  L = len(my_list)
+  for i in range(L/2):
+    my_list[i], my_list[L-i - 1] = my_list[L-i-1], my_list[i]
+  return my_list
+
+ # C1.14 - Write a short Python function that takes a sequence of integer values and determines if there is a distint pair 
+ # of numbers in the sequence whose product is odd.
+
+ 
+
 
 
 
