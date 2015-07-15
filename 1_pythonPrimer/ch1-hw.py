@@ -111,7 +111,40 @@ def reverse(my_list):
  # C1.14 - Write a short Python function that takes a sequence of integer values and determines if there is a distint pair 
  # of numbers in the sequence whose product is odd.
 
- 
+ # The function below returns a list of unique odd numbers - any number in the returned list can be multiplied with any
+ # other number to return an odd number
+
+
+
+def oddPair(data):
+	mySet = set(data)
+	uniqueList = list(mySet)
+	odds = []
+
+	for idx in uniqueList:
+		if (idx % 2 != 0):
+			odds.append(idx)
+	return odds
+
+# practice = [1,1,2,3,4,4,5]
+
+# print oddPair(practice) => output is [1,3,5]
+
+# C1.15 - Write a Python function that takes a sequence of numbers and determines if all the numbers are different 
+# from each other (that is, they are distinct)
+
+# I'll have the program turn the list into a set then back into a list and compare the initial list with the new list
+# that is unique values only and return True if they're the same
+
+def unique(data):
+	firstList = set(data)
+	secondList = list(firstList)
+
+	if(data == secondList):
+		return True
+	else:
+		return False
+
 
 
 
