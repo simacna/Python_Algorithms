@@ -169,6 +169,14 @@ return [x for x in range(91) ]
 [idx*x for idx, x in enumerate(range(1,10))] #go over enumerate() function 
 
 
+# C1.19 - Demonstrate how to use Python's list comprehension syntax to produce the list ['a', 'b', 'c'..'z']
+# but without having to type all 26 such characters literally 
+
+alphabet = [chr(i) for i in range(ord('a'), ord('z')+1)]
+
+
+# C1.20 - Python's random module includes a function shuffle(data) that accepts a list of elements and randomly reorders the
+# elements. Using only randint function, implement your own version of the shuffle function
 
 
 
