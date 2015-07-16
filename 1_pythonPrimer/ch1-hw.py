@@ -145,6 +145,29 @@ def unique(data):
 	else:
 		return False
 
+# C1.16 - In our implementation of the scale function, the body of the loop executes the command data[j] *= factor. We have
+# discussed that numeric types are immutable, and that use of the *= operator in this context causes the creation
+# of a new instance (not the mutation of an existent instance). How is it still possible then, that our implementation
+# of scale changes the actual parameter sent by the caller?
+
+scale = scale * factor
+
+#C1.17 Had we implemented the scale function as follows, does it work properly?
+
+def scale(data, factor):
+	for val in data:
+		val *= factor
+	return val #the book didn't have returned for the scale example -- python returns None type without a return statement
+
+				#are they changing a global data variable, i.e. list? lists are mutable...
+
+# C1.18 - Demonstrate how to use the Python's list comprehension syntax to produce the list 
+#[0, 2, 6, 12, 20, 30, 42, 56, 72, 90]
+  # 2  4  6   8  10  12
+
+return [x for x in range(91) ]
+[idx*x for idx, x in enumerate(range(1,10))] #go over enumerate() function 
+
 
 
 
