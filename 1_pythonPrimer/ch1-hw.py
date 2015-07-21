@@ -206,6 +206,8 @@ def custome_shuffle(data):
 # C1.21 - Write a python program that repeatedly reads lines from standard input until an EOFError is raised, and
 # then outputs those lines in reverse order (a user can indicate end of input by typing ctrl-D)
 
+# can't figure out why the below doesn't return the reversed list data[::-1]
+
 def read(data):
 	age = 1
 	if age < 2:
@@ -215,19 +217,35 @@ def read(data):
 			if age < 0:
 				print("Age must be a positive integer")
 			read(data)
-		except EOFError:
-			print data[::-1]
+		# if data != int:
+		# 	except EOFError:
+		# 		print data[::-1]
+
+	else:
+	except EOFError:
+		return data[::-1]
 
 if __name__ == "__main__": 
     data = [2,3,4] 
     read(data)
 
+# C1.22 - Write a short Python program that takes two arrays a and b of length n storing int values, and returns the
+# dot product of a and b. That is, it returns an array c of length n such that c[i] = a[i] * b[i], for i = 0..., n-1
+
+def multiply(a, b):
+    return [x*y for x,y in zip(a,b)]
 
 
+# C1.24 - Write a short Python function that counts the number of vowels in a given character string. 
 
-
-
-
+def vowels(data):
+    count = 0
+    v = {i:0 for i in 'aeiouAEIOU'}
+    for idx in data:
+        if idx in v:
+            count += 1
+    return count
+    
 
 
 
