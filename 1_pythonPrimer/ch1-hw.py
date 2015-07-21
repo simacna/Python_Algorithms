@@ -245,11 +245,43 @@ def vowels(data):
         if idx in v:
             count += 1
     return count
+
+
+# C1.25 - Write a short Python function that takes a string s, representing a sentence, and returns a copy of the string
+# with all puncutation removes. For example, if given the string "Let's try, Mike", this function would return
+# Lets try Mike 
     
+def punc(data):
+    word = data
+    exclude = set(string.punctuation)
+    s = ''.join(ch for ch in word if ch not in exclude)
+    return s
 
 
+# C1.26 - Write a short program that takes as input three integers a, b, c from console and determines if they can be used in a correct
+# arithmetic formula (in the given order), like "a + b = c", "a = b -c", or "a*b = c"
 
+# this one is both confusing and intuitive... 
 
+import operator 
+ 
+def ordered_integers(a,b,c): 
+   
+    operator_list = [operator.add, operator.sub, 
+                     operator.mul, operator.div] 
+    result_list = list() 
+    for op in operator_list: 
+        if a == op(float(b),float(c)): 
+            print "op-b", op(float(b))
+            result_list.append(op.__name__) 
+            #result_list.append(op.__name__) 
+        if c == op(float(a),float(b)): 
+            print "op-a", op(float(a), float(b))
+            result_list.append(op.__name__) 
+    return result_list
+    
+print ordered_integers(2,2,4)
+    
 
 
 
