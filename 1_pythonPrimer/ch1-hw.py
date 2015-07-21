@@ -203,6 +203,26 @@ def custome_shuffle(data):
 
 # print custome_shuffle([1,2,3,4])
 
+# C1.21 - Write a python program that repeatedly reads lines from standard input until an EOFError is raised, and
+# then outputs those lines in reverse order (a user can indicate end of input by typing ctrl-D)
+
+def read(data):
+	age = 1
+	if age < 2:
+		try:
+			age = int(input("Enter other person's name"))
+			data.append(age)
+			if age < 0:
+				print("Age must be a positive integer")
+			read(data)
+		except EOFError:
+			print data[::-1]
+
+if __name__ == "__main__": 
+    data = [2,3,4] 
+    read(data)
+
+
 
 
 
