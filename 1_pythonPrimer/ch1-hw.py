@@ -283,6 +283,23 @@ def ordered_integers(a,b,c):
 print ordered_integers(2,2,4)
     
 
+#Projects
+
+#P1.30 - Write a python program that can take a positive integer greater than 2 as input and write out the number
+# of times one must repeatedly divide this number by 2 before getting a value less than 2
+
+def div(num):
+    timesDivided = 0
+    counter = num
+    while counter > 2:
+        counter = (counter/2)
+        
+        timesDivided += 1
+    return timesDivided
+    
+
+
+
 
 
 
