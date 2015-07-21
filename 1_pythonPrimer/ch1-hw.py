@@ -178,9 +178,30 @@ alphabet = [chr(i) for i in range(ord('a'), ord('z')+1)]
 # C1.20 - Python's random module includes a function shuffle(data) that accepts a list of elements and randomly reorders the
 # elements. Using only randint function, implement your own version of the shuffle function
 
+# t = [1,2,3]
+# a = t
+# shuffle(a)
+
+# print t [why do both print a and print t produce a shuffled t array? a is a pointer to t and t is not being shuffled]
+
+#the below is not my version as I wasn't able to implement the code, but i'm studying it
+
+def sub_shuffle(data, indexlist): 
+    import random 
+    index = random.randint(0, len(indexlist)-1) #this returns a random number
+    #between 0 and the one less than indexlist
+    rElement = data[indexlist[index]] #returns a random value from data array
+    indexlist.pop(index) #remove the value from indexlist as to not repeat
+    # value the data. if this didn't happen, the same number, say in [1,2,3] 
+    # could be [1, 1, 2]
+    return rElement 
+ 
+def custome_shuffle(data): 
+    indexes_of_data = range(len(data)) 
+    return [sub_shuffle(data, indexes_of_data) for e in range(len(data))]
 
 
-
+# print custome_shuffle([1,2,3,4])
 
 
 
