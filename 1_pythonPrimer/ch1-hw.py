@@ -296,6 +296,22 @@ def div(num):
         
         timesDivided += 1
     return timesDivided
+
+
+#P1.32 - Create a simple python program
+
+# a really crude add/subtract input based 'calculator'
+
+def calc(operation):
+    firstNum = int(raw_input("First number"))
+    secNum = int(raw_input("Second number"))
+    
+    if(operation == "add"):
+        print firstNum + secNum
+    if(operation == "subtract"):
+        print firstNum - secNum
+    
+
     
 
 
