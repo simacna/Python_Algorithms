@@ -312,6 +312,23 @@ def calc(operation):
         print firstNum - secNum
     
 
+#P1.36 - Write a Python program that inputs a list of words, separated by white-spaces, and outputs  how many times
+# each word appears in the list. You need not worry about efficiency at this point, however, as this topic is something
+# that will be addressed later in this book
+
+# below is my own version. Let's see how to improve it.. 
+def counting(data):
+    s = data.split()
+    counting = []
+    for idx in s:
+        
+        counting.append(s.count(idx))
+        
+    
+    return set(counting)
+    
+    
+print counting("hello world hello") #set([1,2])
     
 
 
