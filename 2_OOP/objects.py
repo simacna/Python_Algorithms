@@ -1,4 +1,5 @@
 # This chapter deals with objects
+<<<<<<< HEAD
 
 #Example of a CreditCard class
 
@@ -64,3 +65,6 @@ class CreditCard:
 
 
 
+=======
+def objects():
+>>>>>>> 69ad2f260030570c89b42b67b54bc522c2610df2
