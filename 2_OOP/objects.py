@@ -1,7 +1,7 @@
 # This chapter deals with objects
 
 
-#Example of a CreditCard class
+#Example of a CreditCard classs
 
 class CreditCard:
 	 """A consumer credit card"""
