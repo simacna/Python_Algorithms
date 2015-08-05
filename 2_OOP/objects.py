@@ -56,3 +56,42 @@ class CreditCard:
         return self._balance -= amount
 
 
+
+# The Constructor
+
+cc = CreditCard("John Doe", '1st Bank', '5391 1111 1111 1111', 1000)
+
+
+
+#Testing the Class
+#We demonstrate some basic usage of the CreditCard class, inserting three cards into a list named wallet. We use loops to make some charges and payments, and use various
+#accessor to print results into the console.
+#These tests are enclosed within a conditional: 
+if __name__ == '__main__':
+#so that they can be embedded in the source code with the class definition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
