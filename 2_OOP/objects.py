@@ -66,9 +66,34 @@ cc = CreditCard("John Doe", '1st Bank', '5391 1111 1111 1111', 1000)
 #Testing the Class
 #We demonstrate some basic usage of the CreditCard class, inserting three cards into a list named wallet. We use loops to make some charges and payments, and use various
 #accessor to print results into the console.
-#These tests are enclosed within a conditional: 
-if __name__ == '__main__':
+#These tests are enclosed within a conditional: if __name__ == '__main__':
 #so that they can be embedded in the source code with the class definition.
+
+#the test provides METHOD COVERAGE as each of the methods is called at least once, but it does not provide STATEMENT COVERAGE as there is never a case in which a charge is
+#rejected due to the credit limit. 
+
+if __name__ == '__main__':
+    wallet = []
+    wallet.append(CreditCard('John Bowman', 'California Savings', '1111 1111 1111 1111', 2500))
+    wallet.append(CreditCard('John Cowman', 'California Federal', '2222 2222 2222 2222', 3500))
+    wallet.append(CreditCard('John Dowman', 'California Finance', '3333 3333 3333 3333', 4500))
+
+    for val in range(1,17):
+        wallet[0].charge(val)
+        wallet[1].charge(2*val)
+        wallet[2].charge(3*val)
+
+    for c in range(3):
+        print('Customer=', wallet[c].get_customer())
+        print('Bank=', wallet[c].get_bank())
+        print('Account=', wallet[c].get_account())
+        print('Limit=', wallet[c].get_limit())
+        print('Balance=', wallet[c].get_balance())
+        while wallet[c].get_balance() > 100:
+            wallet[c].make_payment(100)
+            print ('New balance=', wallet[c].get_balance())
+            print()
+            
 
 
 
