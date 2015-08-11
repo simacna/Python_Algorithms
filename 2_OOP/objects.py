@@ -94,7 +94,7 @@ if __name__ == '__main__':
             print ('New balance=', wallet[c].get_balance())
             print()
 #this is a test to see if git is working on this new computer
-
+#test
             
 
 
