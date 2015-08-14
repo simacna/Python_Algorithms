@@ -93,11 +93,9 @@ if __name__ == '__main__':
             wallet[c].make_payment(100)
             print ('New balance=', wallet[c].get_balance())
             print()
-#this is a test to see if git is working on this new computer
-#test
+
+#
             
-
-
 
 
 
