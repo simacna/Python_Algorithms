@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
 #Creating a class named Vector. 
 
-Class Vector:
+class Vector:
     """ Represent a vector in a multidimensional space."""
 
     def __init__(self, d):
@@ -123,19 +123,23 @@ Class Vector:
 
         for j in range(len(self)):
             result[j] = self[j] + other[j]
-        return result
+        return result #
     def __eq__(self, other):
         """Return True if vector has same coordinates as other"""
-        return self._coords = other._coords #Personal question - other._coords? That isn't clicking for some reason
+        return self._coords == other._coords #Personal question - other._coords? That isn't clicking for some reason
     def __ne__(self, other):
         """Return True if vector differs from other."""
         return not self == other
     def __str__(self):
         """Produce string representation of vector"""
-        return '<' + str(self._coords)[1:-1]+ '>' #adapt list representation
+        return '<' + str(self._coords)[1:-1]+ '>' #adapt list representation -- QUESTION. why not str.(self._coords)[0:-1]?
 
 
-
+# vec1 = Vector(2)
+# vec1.__setitem__(0,1)
+# vec1[0] = 0
+# vec1[1] = 1
+# print vec1 ==> <0,1>. What is being called with vec1[x]? how is that being set?
 
             
 
