@@ -208,7 +208,56 @@ class Range:
 
 
             
+#2.4 - Inheritance. There are two ways in which a subclass can differentiate itself from its superclass. A subclass may specialize
+# an existing behavior by providing a new implementation that overrides an existing method. A subcalss may also extend its superclass
+# by providing brand new methods. 
 
+#We'll examine our previous CreditCard class by providing examples of both specialization and extension.  Our definition begins
+#with the syntax:
+
+class PredatoryCreditCard(CreditCard):
+    pass
+
+#The body of the new class provides three member functions: __init__, charge, and process_month. The __init__ constructor serves
+#very similar role to the original CreditCard constructor, except that for our new class, there is an extra parameter to specify
+#the annual percentage rate.
+
+class PredatoryCreditCard(CreditCard):
+    """An extension to CreditCard that compounds interest and fees."""
+
+    def __init__(self, customer, bank, acnt, limit, apr):
+        """Creates a new predatory credit card instance. The initial balance is zero. 
+
+        customer  the name of the customer (e.g. 'John Smith')
+        bank      the name of bank
+        acnt      the account identifier    
+        limit     credit limit (measured in dollars)
+        apr       annual percentage rate (e.g. 0.0825 for 8.25% APR)
+
+        """
+
+        super().__init__(customer, bank, acnt, limit)
+        self._apr = apr
+
+
+    def charge(self, price):
+        """Charge given price to the card, assuming sufficient credit limit. 
+        Return True if charge was processed
+        Return False and assess $5 fee if charge is denied
+
+        """
+
+        success = super().charge(price) #call inherited method
+        if not success:
+            self._balance += 5 #assess penalty
+        return success  #caller expects return value
+
+    def pocess_months(self):
+        """Assess monthly interest on outstanding balanace."""
+
+        if self._balance > 0:
+            monthly_factor = pow(1+self._apr, 1/12)
+            self._balance *= monthly_factor
 
 
 
