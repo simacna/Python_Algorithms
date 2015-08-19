@@ -268,7 +268,30 @@ class Progression:
 
     def __init__(self, start=0):
         """Initialize current to the first value of the progression."""
-        self._current = start
+        self._current = 
+
+
+
+
+#################################### Below is from book - stackoverflow questions #######################################
+
+class Base(object):
+    def __init__(self):
+        print "Base created"
+
+class ChildA(Base):
+    def __init__(self):
+        Base.__init__(self)
+
+class ChildB(Base):
+    def __init__(self):
+        super(ChildB, self).__init__()
+
+ChildA() 
+ChildB()
+
+#Difference between the two above -- ChildB you don't explicitly call the Base class. For Python 3+ you can call super as such:
+super().__init__()
 
 
 
