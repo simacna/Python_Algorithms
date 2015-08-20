@@ -64,12 +64,14 @@ cc = CreditCard("John Doe", '1st Bank', '5391 1111 1111 1111', 1000)
 
 
 #Testing the Class
-#We demonstrate some basic usage of the CreditCard class, inserting three cards into a list named wallet. We use loops to make some charges and payments, and use various
+#We demonstrate some basic usage of the CreditCard class, inserting three cards into a list named wallet. We use loops to make some charges and payments, 
+#and use various
 #accessor to print results into the console.
 #These tests are enclosed within a conditional: if __name__ == '__main__':
 #so that they can be embedded in the source code with the class definition.
 
-#the test provides METHOD COVERAGE as each of the methods is called at least once, but it does not provide STATEMENT COVERAGE as there is never a case in which a charge is
+#the test provides METHOD COVERAGE as each of the methods is called at least once, but it does not provide STATEMENT COVERAGE as there is never a 
+#case in which a charge is
 #rejected due to the credit limit. 
 
 if __name__ == '__main__':
@@ -292,6 +294,56 @@ ChildB()
 
 #Difference between the two above -- ChildB you don't explicitly call the Base class. For Python 3+ you can call super as such:
 super().__init__()
+
+###########################################################################################################################
+
+#2.4.2 Hierarchy of Numeric Progressions
+#As a second example of numeric progression, we develop a hierarchy of classes for iterating numeric progressions. 
+
+class Progression:
+    """ Iterator producing a generic progression
+
+    Default iterator produces the whole numbers 0, 1, 2...
+    """
+
+    def __init__(self, start=0):
+        """ Initialize current to the first value of progression."""
+        self._current = start
+
+    def _advance(self):
+        """Update self._current to a new value.
+        This should be overriden by a subclass to customize progression.
+        By convention, if current is set to None, this designated the end of a finite progression.
+        """
+
+        self._current += 1
+
+    def __next__(self):
+        """Return the next element, or else raise StopIteration error."""
+
+        if self._current is None:
+            raise StopIteration
+        else:
+            answer = self._current  # record current value to return
+            self._advance()         # advance to prepare for next time
+            return answer           # return the answer
+
+    def __iter__(self):
+       """By convention, an iterator must return itself as an iterator"""
+       return self #QUESTION - what does this return? The init constructor?
+
+    def print_progression(self, n):
+        """  Print next n values of the progression."""
+
+        print (''.join(str(next(self)) for j in range(n)))
+
+
+
+
+
+
+
+
 
 
 
