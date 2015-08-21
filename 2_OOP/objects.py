@@ -335,7 +335,7 @@ class Progression:
     def print_progression(self, n):
         """  Print next n values of the progression."""
 
-        print (''.join(str(next(self)) for j in range(n)))
+        print (''.join(str(next(self)) for j in range(n))) #this line of code I do not understand
 
 
 
