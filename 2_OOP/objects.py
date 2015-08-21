@@ -368,11 +368,11 @@ class GeometricProgression(Progression):
     """ Iterator producing a geometric progression"""
 
     def __init__(self, base=2, start=1):
-    """Create a new geometric progression
+        """Create a new geometric progression
 
     base the fixed constant multiplied to each term (default 2)
     start first term of the progression
-    """
+        """
 
         super().__init__(start)
         self._base = base
@@ -401,14 +401,38 @@ class FibonacciProgression(Progression):
 
     def _advance(self):
         """Update current value by taking sum of previous two."""
-
-        
-
+        self._prev, self._current = self._current, self._prev + self._current
 
 
+#  QUESTION - why doesn't below work? What am I doing wrong here?
+#h = FibonacciProgression(first=3, second=4)
+#print (h._advance())
 
 
 
+#Testing our subclasses below along with the desired output
+
+if __name__ = '__main__':
+    print('Default progression:')
+    Progression().print_progression(10)
+
+    print('Arithmetic progression with increment 5:')
+    ArithmeticProgression(5).print_progression(10)
+
+    print('Arithmetic progression with incrememnt 5 and start 2:')
+    ArithmeticProgression(5,2).print_progression(10)
+
+    print('Geometric progression with default base:')
+    GeometricProgression().print_progression(10)
+
+    print('GeometricProgression with base 3:')
+    print GeometricProgression(3).print_progression(10)
+
+    print('Fibonacci progression with default start values:')
+    FibonacciProgression().print_progression(10)
+
+    print('Fibonacci progression with start values 4 and 6:')
+    FibonacciProgression(4,6).print_progression(10)
 
 
 
