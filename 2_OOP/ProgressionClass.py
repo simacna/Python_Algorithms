@@ -111,3 +111,4 @@ if __name__ == '__main__':
 
     print('Fibonacci progression with start values 4 and 6:')
     FibonacciProgression(4,6).print_progression(10)
+

@@ -435,7 +435,61 @@ if __name__ = '__main__':
     FibonacciProgression(4,6).print_progression(10)
 
 
+#2.4.3 - Abstract Base Classes
 
+#Below is an example of using template method pattern and using abstract base classes
+
+from abc import ABCMeta, abstractmethod
+
+class Sequence(metaclass=ABCMeta):
+    """Our own versioin of collections.Sequence abstract base class."""
+
+    @abstractmethod
+
+    def __len__(self):
+        """Return the length of the sequence"""
+
+    @abstractmethod
+
+    def __getitem__(self, j):
+        """ Return the elemnt at index j of the sequence. """
+
+    def __contains__(self, val):
+        """ Return True if val found in the sequence; False otherwise."""
+
+        for j in range(len(self)):
+            if self[j] == val:
+                return True     #found match
+        return False
+
+        raise ValueError('value not in sequence') #never found a match
+
+    def index(self, val):
+        """ Return leftmost index at which val is found (or raise ValueError)"""
+
+        for j in range(len(val)):
+            if self[j] == val:  #leftmost match
+                return j
+        raise ValueError('value not in sequence') #never found a match
+
+    def count(self, val):
+        """Return the number of elememnts equal to given value."""
+        k = 0
+        for j in range(len(self)):
+            if self[j] == val:
+                k += 1
+        return k
+
+
+#two advanced Python techniques were used:
+#1. We declare the ABCMeta class of the abc module as a metaclass of our Sequence class. A metaclass is different from a 
+#superclass in that it provies a template for the class definition itself. Specifically, the ABCMeta declaration assures that the 
+#constructor for the class raises an error. READ MORE ABOUT META CLASSES
+
+#2. @abstractmethod decorator immediately before the __len__ and __getitem__ methods are declared. That declares
+#these two particular methods to be abstract, meaning that we do not provide an implementation within our Sequence base class,
+#but that we expect any concrete subclasses to support those two methods. Python enforces this expectation, by disallowing
+#instantiation for any subclass that does not override the abstract methods with concrete implementation. !YOWZA!
 
 
 
