@@ -362,7 +362,47 @@ class ArithmeticProgression(Progression):
         """ Update current value by adding the fixed increment"""
         self._current += self._increment
 
+#Geometric Progression
 
+class GeometricProgression(Progression):
+    """ Iterator producing a geometric progression"""
+
+    def __init__(self, base=2, start=1):
+    """Create a new geometric progression
+
+    base the fixed constant multiplied to each term (default 2)
+    start first term of the progression
+    """
+
+        super().__init__(start)
+        self._base = base
+
+    def _advance(self):
+        """Update current value by multiplying base"""
+
+        self._current *= self._base
+
+
+#Fibonacci Progression Class
+
+class FibonacciProgression(Progression):
+    """Iterator producing a generalized Fibonacci progression."""
+
+
+    def __init__(self, first=0, second=1):
+        """Create a new fibonacci progression
+
+        first   the first term of the progression (default 0)
+        second  the second term of the progression (default 1)
+        """
+
+        super().__init__(first)  #start progression at first
+        self._prev = second - first  #fictious value preceding the first
+
+    def _advance(self):
+        """Update current value by taking sum of previous two."""
+
+        
 
 
 
