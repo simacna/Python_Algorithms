@@ -491,6 +491,8 @@ class Sequence(metaclass=ABCMeta):
 #but that we expect any concrete subclasses to support those two methods. Python enforces this expectation, by disallowing
 #instantiation for any subclass that does not override the abstract methods with concrete implementation. !YOWZA!
 
+class Range(collections.Sequence):
+
 
 
 
