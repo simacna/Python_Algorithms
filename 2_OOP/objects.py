@@ -492,6 +492,11 @@ class Sequence(metaclass=ABCMeta):
 #instantiation for any subclass that does not override the abstract methods with concrete implementation. !YOWZA!
 
 class Range(collections.Sequence):
+    pass
+
+#2.5 - Namespace and object-orientation 
+
+
 
 
 
