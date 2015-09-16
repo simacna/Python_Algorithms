@@ -517,8 +517,25 @@ class PredatoryCreditCard(CreditCard):
 
 		return success
 
-		
 
+# Nested Classes
+
+# class A:
+# 	class B: 
+
+# In this case, class B is the nested class. The identified B is entered into the namespace of class A associated with the newly defined class. We note this is
+# unrelated to the concept of Inheritance, as class B does not inherit from class A. 
+
+# Nesting one class in the scope of another makes it clear that the nested class exists for support of the outer class. 
+
+# two ways of copying variables rather than aliasing them. First is shallow copy:
+
+list1 = [1,2]
+list2 = list(list1)
+
+# Deep copy
+
+list2 = copy.deepcopy(list1)
 
 
 
