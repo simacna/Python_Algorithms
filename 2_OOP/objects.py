@@ -496,6 +496,29 @@ class Range(collections.Sequence):
 
 #2.5 - Namespace and object-orientation 
 
+# Instance namespace - manages specific to an individual object. For example, each instnace of CreditCard class maintains a distinct
+# balance, a distinct account number etc. 
+
+# There is a separate class namespace for each class that has been defined. This namespace is used to manage members that are to be
+# shared by all instances of a class, or used without reference to any particular instance. 
+
+# Class data members - A class-level data member is often used when there is some value, such as a constant, that is to be shared by all instnaces
+# of a class. Example below that is better than the original charge method:
+
+class PredatoryCreditCard(CreditCard):
+	OVERLIMIT_FEE = 5
+
+	def charge(self, price):
+
+		success = super().charge(price)
+
+		if not success:
+			self._balance += PredatoryCreditCard.OVERLIMIT_FEE
+
+		return success
+
+		
+
 
 
 
