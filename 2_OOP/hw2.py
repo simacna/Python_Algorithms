@@ -3,7 +3,7 @@
 # each variable to an appropriate value, and your class should include methods for setting the value of each type, and retrieving
 # the value of each type
 
-class Flower(name, numberOfPetals, price):
+class Flower:
 
 	def __init__(self, name, numberOfPetals, price):
 		self.name = name
@@ -12,4 +12,25 @@ class Flower(name, numberOfPetals, price):
 
 	def setName(name):
 		self.name = name
-		return self.name
+		return type(self.name), self.name #if currently I take out the return self.name and run the below code below, the correct answer will 
+		#still be returned... why? Is it changing the constructor?
+		#also return type doesn't return the type, why
+
+
+    def setPetals(self, numOfPets):
+        self.numberOfPetals = numOfPets
+        return type(self.numberOfPetals)
+
+    def setPrice(self, price):
+        self.price = price
+        return self.price
+
+
+
+
+new = Flower('rose', 5, 4)
+new.setName("sun")
+print(new.name)
+#The above code works except for the return type of the values
+
+
