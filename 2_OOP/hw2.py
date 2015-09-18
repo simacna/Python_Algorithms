@@ -33,4 +33,7 @@ new.setName("sun")
 print(new.name)
 #The above code works except for the return type of the values
 
+#R2.5 - Use the techniques of Section 1.7 to revise the charge and make_payment methods of the CreditCard class to ensure that
+#the caller sends a number as a parameter
+
 
