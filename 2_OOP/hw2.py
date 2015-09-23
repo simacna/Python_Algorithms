@@ -5,16 +5,16 @@
 
 class Flower:
 
-    def __init__(self, name, numberOfPetals, price):
-        self.name = name
-        self.numberOfPetals = numberOfPetals
-        self.price = price
+	def __init__(self, name, numberOfPetals, price):
+		self.name = name
+		self.numberOfPetals = numberOfPetals
+		self.price = price
 
-    def setName(self, name):
-        self.name = name
-        return type(self.name), self.name #if currently I take out the return self.name and run the below code below, the correct answer will
-        #still be returned... why? Is it changing the constructor?
-        #also return type doesn't return the type, why
+	def setName(name):
+		self.name = name
+		return type(self.name), self.name #if currently I take out the return self.name and run the below code below, the correct answer will 
+		#still be returned... why? Is it changing the constructor?
+		#also return type doesn't return the type, why
 
 
     def setPetals(self, numOfPets):
@@ -30,7 +30,7 @@ class Flower:
 
 new = Flower('rose', 5, 4)
 new.setName("sun")
-# print(new.name)
+print(new.name)
 #The above code works except for the return type of the values
 
 #R2.5 - Use the techniques of Section 1.7 to revise the charge and make_payment methods of the CreditCard class to ensure that
@@ -52,7 +52,7 @@ class CreditCard:
         self._bank = bank
         self._account = acnt
         self._limit = limit
-        self._balance = 0
+        self._balance = 10
 
     def get_customer(self):
         """ Return name of customer. """
@@ -94,5 +94,8 @@ class CreditCard:
 
     def make_payment(self, amount):
         """ Process customer payment that reduces balance."""
-        return self._balance -= amount
+        if not isinstance(amount, (int,float)):
+            raise TypeError("Amount must be a number")
+        else:
+            self._balance -= amount
 
