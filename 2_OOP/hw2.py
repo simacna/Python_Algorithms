@@ -35,6 +35,7 @@ print(new.name)
 
 #R2.5 - Use the techniques of Section 1.7 to revise the charge and make_payment methods of the CreditCard class to ensure that
 #the caller sends a number as a parameter
+#R2.6 - If the parameter to make_payment is negative, it will raise the balance. Add a ValueError for this case
 
 class CreditCard:
     """A consumer credit card"""
@@ -94,8 +95,10 @@ class CreditCard:
 
     def make_payment(self, amount):
         """ Process customer payment that reduces balance."""
-        if not isinstance(amount, (int,float)):
+        if not isinstance(amount, (int,float)) :
             raise TypeError("Amount must be a number")
+        if amount < 0:
+            raise ValueError("Amount cannot be negative")
         else:
             self._balance -= amount
 
