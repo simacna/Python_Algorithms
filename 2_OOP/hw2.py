@@ -131,9 +131,9 @@ class Vector:
             raise ValueError('Dimensions must agree')
         result = Vector(len(self))  #start with vector of zeros
 
-        for j in range(len(self)):
+        for j in range(len(self)): 
             result[j] = self[j] + other[j]
-        return result #
+        return result 
     def __eq__(self, other):
         """Return True if vector has same coordinates as other"""
         return self._coords == other._coords #Personal question - other._coords? That isn't clicking for some reason

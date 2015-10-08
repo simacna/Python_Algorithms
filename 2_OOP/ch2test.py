@@ -26,6 +26,8 @@ class Vector:
         for j in range(len(self)):
             result[j] = self[j] + other[j]
         return result #
+    def __whole__(self):
+        return self._coords
     def __eq__(self, other):
         """Return True if vector has same coordinates as other"""
         return self._coords == other._coords #Personal question - other._coords? That isn't clicking for some reason
@@ -37,14 +39,23 @@ class Vector:
         return '<' + str(self._coords)[1:-1]+ '>' #adapt list representation -- QUESTION. why not str.(self._coords)[0:-1]?
     def __sub__(self, other):
         """Return the subtraction of two vectors"""
-        sub = []
-        if len(self) != len(other):
-            raise ValueError("Dimensions must agree")
-        for v in self._coords:
-            a = self._coords[v] - other[v]
-            sub.append(a)
-        return sub
+        # sub = []
+        # if len(self) != len(other):
+        #     raise ValueError("Dimensions must agree")
+        # for v in self._coords:
+        #     a = self._coords[v] - other[v]
+        #     sub.append(a)
+        # return sub
+        if len(self) != len(other): #relies on __len__ method
+            raise ValueError('Dimensions must agree')
+        result = Vector(len(self))
+        for j in range(len(self)):
+            result[j] = self[j] - other[j]
+        return result
+
 
 vex = Vector(4)
+who = vex.__setitem__(0,2)
 a = vex.__sub__([3,3,3,3])
+
 print(a)

@@ -3,7 +3,7 @@
 # 3.1 - Experimental studies
 
 from time import time
-start_time = time()
+start_tinme = time()
 run algorithm
 end_time = time()
 elapsed = end_time - start_time
