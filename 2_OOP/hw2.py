@@ -157,6 +157,27 @@ vex = Vector(4)
 a = vex.__sub__([3,3,3,3])
 print(a)
 
+# R2.11 - In section 2.3.3, we note that our Vector class supports a syntax such as v = u + [5,3,10,-2,1], in which the sum of a vector and list
+# returns a new vector. However, the syntax v = [5,3,10,-2,1] + u is illegal. Explain how the Vector class definition can be revised so
+# that this suntax generates a new vector.
+
+# This will require adding a new method:
+
+def __radd__(self, other):
+  return Vector.__add__(self, other)
+
+# R2.12 - Implement the __mul__ method for the Vector class so that the expression v*3 returns a new vector with coordinates that are 3 times
+# the respect coordinates of v
+
+# I added a simple method, but the problem is this just multiplies the initial coordinates and not say if the list was [2,3,4], it wouldn't
+# be.. OH MY GOD I READ IT WRONG, I WAS MULTIPLYIGN THE LENGTH OF THE LIST. Here is the wrong code:
+
+ def __mul__(self, mul):
+        inter = Vector(len(self))
+
+        return self._coords * mul
+
+# The correct code: 
 
 
 
