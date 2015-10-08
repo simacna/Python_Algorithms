@@ -172,12 +172,23 @@ def __radd__(self, other):
 # I added a simple method, but the problem is this just multiplies the initial coordinates and not say if the list was [2,3,4], it wouldn't
 # be.. OH MY GOD I READ IT WRONG, I WAS MULTIPLYIGN THE LENGTH OF THE LIST. Here is the wrong code:
 
- def __mul__(self, mul):
-        inter = Vector(len(self))
+def __mul__(self, mul):
+      inter = Vector(len(self))
 
-        return self._coords * mul
+      return self._coords * mul
 
 # The correct code: 
+
+
+def __mul__(self, mul):
+    inter = Vector(len(self))
+
+    for j in range(len(self)):
+        inter[j] = inter[j] * mul
+    return inter
+
+# QUESTION IS WHY CAN'T I SET ANY VALUES WITH __setitem__?
+
 
 
 
