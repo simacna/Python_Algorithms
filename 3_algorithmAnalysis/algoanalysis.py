@@ -13,6 +13,7 @@ from time import time
 # A fairer metric is the number of CPU cycles that used by the algorithm. This can be determined using the clock function of the time
 # module, but even this measure might not be consistent if repeating the identical algo on the identical input
 
+# start_time = time()
 def find_max(input):
 	""" Return the maximum element from a nonempty Python list. """
 	biggest = input[0]
@@ -21,5 +22,12 @@ def find_max(input):
 			biggest = idx
 	return biggest
 
-test = find_max([1,3,4,5,6,7])
-print(test)
+# elapsed_time = start_time - end_time
+# print(elapsed_time)
+start_time = time()
+find_max([1,3,4,5,6,7])
+end_time = time()
+
+elapsed_time = start_time - end_time
+
+print(elapsed_time)
