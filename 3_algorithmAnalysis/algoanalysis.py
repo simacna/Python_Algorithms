@@ -30,4 +30,17 @@ end_time = time()
 
 elapsed_time = start_time - end_time
 
-print(elapsed_time)
+# print(elapsed_time)
+
+def rice(number_of_boxes):
+	max_size = number_of_boxes
+	init = 1
+	increasing = 1
+	while init < max_size:
+		increasing *= 2
+		max_size -= 1
+	return increasing
+print(rice(64))
+
+
+
