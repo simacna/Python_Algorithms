@@ -14,6 +14,7 @@ from time import time
 # module, but even this measure might not be consistent if repeating the identical algo on the identical input
 
 # start_time = time()
+#below function is a O(n)
 def find_max(input):
 	""" Return the maximum element from a nonempty Python list. """
 	biggest = input[0]
@@ -40,7 +41,11 @@ def rice(number_of_boxes):
 		increasing *= 2
 		max_size -= 1
 	return increasing
-print(rice(64))
+# print(rice(64))
+
+
+
+
 
 
 
