@@ -44,18 +44,22 @@ def rice(number_of_boxes):
 # print(rice(64))
 
 
-def sinaPrefix(S):
-	n = len(S)
-	A = [0] * n
+def Prefix1(S):
+	""" 
+	This algo has a O(n^2) running time
+	"""
+	n = len(S) #executes in constant time
+	A = [0] * n #causes the creation of and initialization of a python list with len n
+	# this uses a constant number of primitive operations per element, and thus runs O(n)
+
+	#below are two nested for loops which are controlled by counters j, i. body of outer loop is controlled by counter j n times, so total = 0
+	# and A[j] = total/(j+1) are executed n times each
 	for j in range(n):
 		total = 0
-		for i in range(j + 1):
+		for i in range(j + 1): #n(n+1)/2 => O(n^2)
 			total += S[i]
 		A[j] = total/(j+1)
 	return A
-
-
-# print(sinaPrefix([1,2,3]))
 
 
 
