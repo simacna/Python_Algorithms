@@ -55,7 +55,7 @@ def sinaPrefix(S):
 	return A
 
 
-print(sinaPrefix([1,2,3]))
+# print(sinaPrefix([1,2,3]))
 
 
 
