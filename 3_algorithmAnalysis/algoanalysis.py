@@ -44,7 +44,7 @@ def rice(number_of_boxes):
 # print(rice(64))
 
 
-def Prefix1(S):
+def prefix1(S):
 	""" 
 	This algo has a O(n^2) running time
 	"""
@@ -61,15 +61,47 @@ def Prefix1(S):
 		A[j] = total/(j+1)
 	return A
 
+def prefix2(S):
+	"""Returns a list such that, for all j, A[j] equals average of S[0,...,S[j]]"""
 
+	n = len(S)
+	A = [0] * n
+	for j in range(n):
+		A[j] = sum(S[0:j+1])/(j+1) #we've replaced the inner loop by using single expression S(S[0:j+1])
+		#while this simplifies the presentation, asymptotically this is no better
+		#sum() is a function call and an evaluation of that function takes O(j+1) time in context
+	return A
 
+def prefix3(S):
+	"""Returns a list such that, for all j, A[j] equals average of S[0,...,S[j]]"""
+	print("this is the list", S)
+	n = len(S)
+	A = [0] * n
+	total = 0
+	for j in range(n):
+		total += S[j]
+		A[j] = total/(j+1)
+		print("this is total", total)
+		print("this is j", (j+1))
+		print ("this is A[j]", A[j])
+		print("==========")
+	return A
 
+# print(prefix1([0,1,2,3,4,5]))
+# print("=====")
+#print(prefix2([1,2,3]))
+# print("=====")
+# print(prefix3([0,1,2,3,4,5]))
 
-
-
-
-
-
+def disjoint(A, B, C):
+	"""Return True if there is no element common to all three lists"""
+	#O(n^3)
+	for a in A:
+		for b in B:
+			for c in C:
+				if a == b == c:
+					return False
+	return True
 
 
 
