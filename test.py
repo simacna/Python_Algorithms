@@ -27,4 +27,4 @@ def sinaPrefix(S):
 
 print(mine([1,2,3,4,5]))
 print("=========")
-print(sinaPrefix([1,2,3,4,5]))
+# print(sinaPrefix([1,2,3,4,5]))
