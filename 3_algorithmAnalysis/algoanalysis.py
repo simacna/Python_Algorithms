@@ -21,7 +21,7 @@ def find_max(input):
 	for idx in input:
 		if idx > biggest:
 			biggest = idx
-	return biggest
+	return biggestƒ
 
 # elapsed_time = start_time - end_time
 # print(elapsed_time)
@@ -122,6 +122,42 @@ def disjoint2(A, B, C):
 				if S[j] == S[k]:
 					return False
 		return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
