@@ -25,6 +25,16 @@ def sinaPrefix(S):
 		A[j] = total/(j+1)
 	return A
 
-print(mine([1,2,3,4,5]))
-print("=========")
+# print(mine([1,2,3,4,5]))
+# print("=========")
 # print(sinaPrefix([1,2,3,4,5]))
+
+
+def rec(n):
+	# sum = 1
+	if n == 0:
+		return 1
+	else:
+		return n * rec(n-1)
+
+print ("output", rec(4))
