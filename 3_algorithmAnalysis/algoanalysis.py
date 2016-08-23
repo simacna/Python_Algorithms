@@ -104,7 +104,7 @@ def disjoint(A, B, C):
 	return True
 
 def disjoint2(A, B, C):
-	""" worst case scenario for this is O(n^2)"""
+	""" worst case scenario for this is O(n^2)/"""
 	for a in A:
 		for b in B:
 			if a == b:
