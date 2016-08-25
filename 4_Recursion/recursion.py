@@ -7,7 +7,7 @@ def rec(n):
     return  n*rec(n-1)
   
 
-print(rec(3))
+# print(rec(3))
 
 
 #below is where 3 functions related to drawing ruler are
@@ -26,8 +26,28 @@ def draw_interval(center_length):
 
 def draw_ruler(num_inches, major_length):
   """Draw English ruler with given number of inches, major tick length"""
-  draw_line(major_length, '0')
+  draw_line(major_length)
   for j in range(1, 1 + num_inches):
-    draw_line()
+    draw_interval(major_length - 1)    
+    draw_line(major_length, str(j))
+# draw_ruler(2,4)
 
 
+def binary_search(data, target, low, high):
+  times = 0
+  if low > high:
+    return False
+  else:
+    times +=1
+    mid = (low + high) // 2
+    print("mid", mid)
+    if target == data[mid]:
+      print("target", target)
+      return True
+    elif target < data[mid]:
+      return binary_search(data, target, low, mid-1)
+    else:
+      return binary_search(data, target, mid+1, high)
+
+
+print(binary_search([2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37], 22, 0, 16))
