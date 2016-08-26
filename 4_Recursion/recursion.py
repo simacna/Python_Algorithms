@@ -50,4 +50,28 @@ def binary_search(data, target, low, high):
       return binary_search(data, target, mid+1, high)
 
 
-print(binary_search([2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37], 22, 0, 16))
+# print(binary_search([2,4,5,7,8,9,12,14,17,19,22,25,27,28,33,37], 22, 0, 16))
+
+def bi_search(data, target):
+  first = 0
+  last = len(data) - 1
+  found = False
+  
+  while first <= last and not found:
+    mid_point = (first + last)//2
+
+# print(bi_search([1,2,4,5], 3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
