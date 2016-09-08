@@ -59,6 +59,7 @@ def bi_search(data, target):
   
   while first <= last and not found:
     mid_point = (first + last)//2
+    if data_
 
 # print(bi_search([1,2,4,5], 3))
 
